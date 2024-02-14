@@ -18,3 +18,7 @@ function getComputerChoice() {
 function convertStringToLowerCase(str) {
   return str.toLowerCase();
 }
+
+function capitalizeString(str) {
+  return str.slice(0, 1) + str.slice(1);
+}
