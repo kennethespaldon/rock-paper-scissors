@@ -5,9 +5,7 @@ function getRandomNumber() {
 }
 
 function getComputerChoice() {
-  let randomNum = getRandomNumber();
-
-  switch (randomNum) {
+  switch (getRandomNumber()) {
     case 0:
       return "rock";
     case 1:
@@ -15,4 +13,8 @@ function getComputerChoice() {
     case 2:
       return "scissors";
   }
+}
+
+function uncapitalizeString(str) {
+  return str.toLowerCase();
 }
