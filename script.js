@@ -7,14 +7,14 @@ function getRandomNumber() {
 function getComputerChoice() {
   switch (getRandomNumber()) {
     case 0:
-      return "rock";
+      return "Rock";
     case 1:
-      return "paper";
+      return "Paper";
     case 2:
-      return "scissors";
+      return "Scissors";
   }
 }
 
-function uncapitalizeString(str) {
+function convertStringToLowerCase(str) {
   return str.toLowerCase();
 }
