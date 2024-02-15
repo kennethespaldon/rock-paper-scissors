@@ -20,5 +20,21 @@ function convertStringToLowerCase(str) {
 }
 
 function capitalizeString(str) {
-  return str.slice(0, 1) + str.slice(1);
+  return str.slice(0, 1).toUpperCase() + str.slice(1);
+}
+
+function checkSelections(playerSelection, computerSelection) {
+  if (playerSelection !== computerSelection) {
+    if (
+      (playerSelection === "Rock" && computerSelection === "Scissors") ||
+      (playerSelection === "Paper" && computerSelection === "Rock") ||
+      (playerSelection === "Scissors" && computerSelection === "Paper")
+    ) {
+      return `You Win! ${playerSelection} beats ${computerSelection}`;
+    } else {
+      return `You lose! ${playerSelection} beats ${computerSelection}`;
+    }
+  } else {
+    return "It's a tie!";
+  }
 }
