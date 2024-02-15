@@ -39,18 +39,32 @@ function doesPlayerWinRound(playerSelection, computerSelection) {
   return false;
 }
 
-function playRound(playerSelection, computerSelection) {
-  playerSelection = capitalizeString(playerSelection);
-
+function outputRoundResults(playerSelection, computerSelection) {
   if (isRoundTie(playerSelection, computerSelection)) {
     console.log("It's a tie!");
-    return "Tie";
   } else {
     if (doesPlayerWinRound(playerSelection, computerSelection)) {
       console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
       return "Player";
     } else {
       console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+      return "Computer";
+    }
+  }
+}
+
+function playRound(playerSelection, computerSelection) {
+  playerSelection = capitalizeString(playerSelection);
+
+  if (isRoundTie(playerSelection, computerSelection)) {
+    outputRoundResults(playerSelection, computerSelection);
+    return "Tie";
+  } else {
+    if (doesPlayerWinRound(playerSelection, computerSelection)) {
+      outputRoundResults(playerSelection, computerSelection);
+      return "Player";
+    } else {
+      outputRoundResults(playerSelection, computerSelection);
       return "Computer";
     }
   }
