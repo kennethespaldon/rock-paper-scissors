@@ -43,18 +43,12 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = capitalizeString(playerSelection);
 
   if (isRoundTie(playerSelection, computerSelection)) {
-    return "It's a tie";
+    return "Tie";
   } else {
     if (doesPlayerWinRound(playerSelection, computerSelection)) {
-      return `You Win! ${playerSelection} beats ${computerSelection}`;
+      console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
     } else {
-      return `You Lose! ${computerSelection} beats ${playerSelection}`;
+      console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
     }
   }
 }
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
