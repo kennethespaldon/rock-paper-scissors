@@ -15,12 +15,8 @@ function getComputerChoice() {
   }
 }
 
-function convertStringToLowerCase(str) {
-  return str.toLowerCase();
-}
-
 function capitalizeString(str) {
-  return str.slice(0, 1).toUpperCase() + str.slice(1);
+  return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
 }
 
 function isRoundTie(playerSelection, computerSelection) {
@@ -28,7 +24,7 @@ function isRoundTie(playerSelection, computerSelection) {
     return true;
   }
 
-   return false;
+  return false;
 }
 
 function doesPlayerWinRound(playerSelection, computerSelection) {
@@ -56,5 +52,13 @@ function outputRoundResults(playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  return checkSelections(playerSelection, computerSelection);
+  if (isRoundTie(playerSelection, computerSelection)) {
+    if (doesPlayerWinRound(playerSelection, computerSelection)) {
+      return `You Win! ${playerSelection} beats ${computerSelection}`;
+    } else {
+      return `You Lose! ${playerSelection} beats ${computerSelection}`;
+    }
+  }
+    
+  return "It's a tie";
 }
