@@ -39,30 +39,18 @@ function doesPlayerWinRound(playerSelection, computerSelection) {
   return false;
 }
 
-function outputRoundResults(playerSelection, computerSelection) {
-  if (isRoundTie(playerSelection, computerSelection)) {
-    if (doesPlayerWinRound(playerSelection, computerSelection)) {
-      return `You Win! ${playerSelection} beats ${computerSelection}`;
-    } else {
-      return `You Lose! ${playerSelection} beats ${computerSelection}`;
-    }
-  }
-
-  return "It's a tie";
-}
-
 function playRound(playerSelection, computerSelection) {
   playerSelection = capitalizeString(playerSelection);
 
   if (isRoundTie(playerSelection, computerSelection)) {
+    return "It's a tie";
+  } else {
     if (doesPlayerWinRound(playerSelection, computerSelection)) {
       return `You Win! ${playerSelection} beats ${computerSelection}`;
     } else {
-      return `You Lose! ${playerSelection} beats ${computerSelection}`;
+      return `You Lose! ${computerSelection} beats ${playerSelection}`;
     }
   }
-    
-  return "It's a tie";
 }
 
 const playerSelection = "rock";
