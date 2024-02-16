@@ -70,6 +70,10 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+function outputCurrentGameScore(playerScore, computerScore) {
+  console.log(`Current Score: ${playerScore} - ${computerScore}`);
+}
+
 function outputGameResults(playerScore, computerScore) {
   if (playerScore > computerScore) {
     console.log("Player wins the game!");
@@ -98,6 +102,8 @@ function playGame() {
         computerScore++;
         break;
     }
+
+    outputCurrentGameScore(playerScore, computerScore);
   }
 
   outputGameResults(playerScore, computerScore);
