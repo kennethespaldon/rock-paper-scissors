@@ -15,3 +15,8 @@ function getComputerChoice()
     return "scissors";
   }
 }
+
+function getHumanChoice()
+{
+  return prompt("rock, paper, or scissors?: ", ""); 
+}
