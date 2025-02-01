@@ -63,22 +63,53 @@ function displayRoundResult(result, humanChoice, computerChoice)
   }
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
-function playRound(humanChoice, computerChoice) 
+function displayWinner(humanScore, computerScore)
 {
-  humanChoice = humanChoice.toLowerCase();
-  let result = getRoundResult(humanChoice, computerChoice);
-
-  if (result === "human") 
+  if (humanScore === computerScore)
   {
-    humanScore++;
+    console.log(`Tie game! ${humanScore} - ${computerScore}`);
   }
-  else if (result === "computer")
+  else if (humanScore > computerScore) 
   {
-    computerScore++;
+    console.log(`You win! ${humanScore} - ${computerScore}`);
   }
-
-  displayRoundResult(result, humanChoice, computerChoice);
+  else
+  {
+    console.log(`You lose! ${humanScore} - ${computerScore}`);
+  }
 }
+
+function playGame() 
+{
+  let humanScore = 0;
+  let computerScore = 0;
+  
+  function playRound(humanChoice, computerChoice) 
+  {
+    humanChoice = humanChoice.toLowerCase();
+    let result = getRoundResult(humanChoice, computerChoice);
+  
+    if (result === "human") 
+    {
+      humanScore++;
+    }
+    else if (result === "computer")
+    {
+      computerScore++;
+    }
+  
+    console.log("Computer chose " + computerChoice);
+    displayRoundResult(result, humanChoice, computerChoice);
+  }
+
+  for (let round = 1; round <= 5; round++)
+  {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+
+  displayWinner(humanScore, computerScore);
+}
+
+playGame();
