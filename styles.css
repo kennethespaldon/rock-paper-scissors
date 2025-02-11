@@ -9,6 +9,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 50px;
 }
 
 .game-title {
@@ -64,6 +65,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .reset-btn {
@@ -79,6 +81,7 @@ body {
 }
 
 .current-round {
+  width: 200px;
   font-size: 32px;
 }
 
