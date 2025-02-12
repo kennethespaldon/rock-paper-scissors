@@ -5,7 +5,8 @@ const computerScoreDisplay = document.querySelector(".computer-score");
 const currentRoundDisplay = document.querySelector(".current-round");
 const roundResultDisplay = document.querySelector(".round-results");
 
-const symbols = document.querySelectorAll(".symbol");
+// const symbols = document.querySelectorAll(".symbol");
+const symbols = document.querySelector(".symbol-containers");
 
 const resetBtn = document.querySelector(".reset-btn");
 
@@ -154,9 +155,7 @@ function playGame()
     }
     else 
     {
-      symbols.forEach((symbol) => {
-        symbol.removeEventListener("click", chooseSymbol);
-      });
+      symbols.removeEventListener("click", chooseSymbol);
     }
   }
 
@@ -183,9 +182,7 @@ function playGame()
 
   function enableSymbolButtons()
   {
-    symbols.forEach((symbol) => {
-      symbol.addEventListener("click", chooseSymbol);
-    });  
+    symbols.addEventListener("click", chooseSymbol);
   }
 
   resetBtn.addEventListener("click", () => {
